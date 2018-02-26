@@ -1,7 +1,9 @@
 const palindrome = function(value){
   if(typeof value === "string"){
-    const val = value.toLowerCase();
+    const noPunc = value.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    const val = noPunc.replace(/\s/g, '');
     const lav = val.split('').reverse().join('');
+    
     if(val === lav){
       return true;
     } else {
